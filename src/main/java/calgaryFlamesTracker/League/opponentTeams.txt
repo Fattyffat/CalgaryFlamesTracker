@@ -1,0 +1,7 @@
+EDM,Edmonton Oilers,Rogers Place
+ANA,Anaheim Ducks,Honda Center
+SJS,San Jose Sharks,SAP Center
+SEA,Seattle Kraken,Climate Pledge Arena
+VGK,Vegas Golden Knights,T-Mobile Arena
+LAK,Los Angeles Kings,Crypto.com Arena
+VAN,Vancouver Canucks,Rogers Arena

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cftp.calgaryflamestrackerproject.GameController">
+   <children>
+      <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane>
+               <children>
+                  <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Team">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="homeTeamText" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Team">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="homeShots" layoutX="74.0" layoutY="296.0" />
+                  <Text layoutX="104.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of Shots" />
+                  <Text fx:id="homeTeamScoreText" layoutX="262.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="116.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#addHomeGoal" text="Add Goal" />
+                  <ImageView fx:id="homeTeamLogo" fitHeight="148.0" fitWidth="185.0" layoutX="60.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <ScrollPane prefHeight="751.0" prefWidth="522.0">
+               <content>
+                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="769.0" prefWidth="590.0">
+                     <children>
+                        <TableView fx:id="scorersTable" layoutX="68.0" layoutY="100.0" prefHeight="278.0" prefWidth="454.0">
+                          <columns>
+                            <TableColumn fx:id="playerScoredCol" editable="false" prefWidth="174.40008544921875" text="Player Scored" />
+                            <TableColumn fx:id="assistersCol" editable="false" prefWidth="278.4" sortable="false" text="Assisted By">
+                                 <columns>
+                                    <TableColumn fx:id="assistersCol1" editable="false" prefWidth="137.5999755859375" sortable="false" text="Player 1" />
+                                    <TableColumn fx:id="assistersCol2" editable="false" prefWidth="139.2000732421875" sortable="false" text="Player 2" />
+                                 </columns>
+                              </TableColumn>
+                          </columns>
+                        </TableView>
+                        <Text layoutX="246.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calgary Stats">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="finishGame" layoutX="255.0" layoutY="721.0" mnemonicParsing="false" onMouseClicked="#finishGame" text="Finish Game" />
+                        <Text layoutX="68.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goalie That Played:" />
+                        <TextField fx:id="jerseyNumberNotPlayed" layoutX="68.0" layoutY="515.0" promptText="e.g. 13" />
+                        <Text layoutX="68.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add player that did not play:" />
+                        <Button layoutX="227.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#addPlayerThatDidNotPlay" text="Add" />
+                        <TableView fx:id="playersNotPlayedTable" layoutX="68.0" layoutY="564.0" prefHeight="134.0" prefWidth="201.0">
+                          <columns>
+                            <TableColumn fx:id="playerNotPlayedCol" editable="false" prefWidth="200.80001220703124" text="Player(s) that did not play:" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="68.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game being played at: ">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="arenaName" layoutX="255.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arena">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="goaliePlayedText" layoutX="69.0" layoutY="438.0" promptText="e.g. 80" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane>
+               <children>
+                  <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Away Team">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="awayTeamText" layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Away Team">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="awayTeamScoreText" layoutX="261.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="awayShots" layoutX="73.0" layoutY="296.0" />
+                  <Text layoutX="103.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of Shots" />
+                  <Button layoutX="115.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#addAwayGoal" text="Add Goal" />
+                  <ImageView fx:id="awayTeamLogo" fitHeight="148.0" fitWidth="185.0" layoutX="52.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" fx:id="x3" />
+               </font>
+               <textFill>
+                  <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+               </textFill>
+            </Label>
+            <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

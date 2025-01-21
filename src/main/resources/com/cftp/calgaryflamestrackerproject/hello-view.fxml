@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cftp.calgaryflamestrackerproject.HelloController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadDefault" text="Load Empty Calgary Roster" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#saveDefault" text="Save" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Save as..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#exitMenu" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#aboutInfo" text="About CalgaryFlamesTracker" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+                  <Text layoutX="10.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Skater">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skater Name" />
+                  <Text layoutX="20.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jersey Number" />
+                  <Text layoutX="20.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of Goals" />
+                  <Text layoutX="20.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of Assists" />
+                  <Text layoutX="20.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played" />
+                  <TextField fx:id="skaterName" layoutX="120.0" layoutY="35.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="skaterJerseryNumber" layoutX="120.0" layoutY="62.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="skaterGoals" layoutX="120.0" layoutY="89.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="skaterAssists" layoutX="120.0" layoutY="116.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="skaterGamesPlayed" layoutX="120.0" layoutY="144.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Button fx:id="skaterButton" layoutX="84.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#addSkaterButton" text="Add Skater" />
+                  <Button layoutX="149.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#viewRosterWithStats" text="View Roster with Stats" />
+                  <Text layoutX="10.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Goalie">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skater Name" />
+                  <TextField fx:id="goalieName" layoutX="122.0" layoutY="244.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Text layoutX="20.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jersey Number" />
+                  <Text layoutX="20.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shots Faced" />
+                  <Text layoutX="20.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shots Saved" />
+                  <Text layoutX="20.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutouts" />
+                  <Text layoutX="20.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played" />
+                  <TextField fx:id="goalieJerseyNumber" layoutX="122.0" layoutY="272.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="goalieShotsFaced" layoutX="122.0" layoutY="300.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="goalieSaved" layoutX="122.0" layoutY="328.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="goalieShutout" layoutX="122.0" layoutY="356.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="goalieGamesPlayed" layoutX="122.0" layoutY="384.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Button fx:id="goalieButton" layoutX="83.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#addGoalieButton" text="Add Goalie" />
+                  <Text layoutX="10.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Items">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="viewRoster" layoutX="18.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#viewRosterButton" text="View Roster" />
+                  <Button fx:id="top5Goals" layoutX="15.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#top5GoalsButton" text="Top 5 in Goals" />
+                  <Button fx:id="top5Assists" layoutX="167.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#top5AssistsButton" text="Top 5 in Assists" />
+                  <Button layoutX="107.0" layoutY="703.0" mnemonicParsing="false" onMouseClicked="#getPlayerStats" text="Retrieve Stats" />
+                  <Text layoutX="12.0" layoutY="682.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter in Jersey Number to retrieve stats" />
+                  <TextField fx:id="jerseyNumberStatsToGet" layoutX="235.0" layoutY="664.0" prefHeight="25.0" prefWidth="50.0" />
+                  <Button layoutX="67.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#teamStatsAsWhole" text="View Team Stats as a Whole" />
+          </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="751.0" prefWidth="522.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+              <children>
+                        <TextArea fx:id="teamStatsView" editable="false" layoutX="26.0" layoutY="148.0" prefHeight="564.0" prefWidth="544.0" style="-fx-font-family: monospace;" />
+                        <ImageView fitHeight="120.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@flamesLogo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="133.0" fitWidth="178.0" layoutX="436.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@blastyLogo.png" />
+                           </image>
+                        </ImageView>
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane>
+          <children>
+                  <ComboBox fx:id="awayTeamChoice" layoutX="69.0" layoutY="162.0" prefWidth="150.0" />
+                  <ComboBox fx:id="homeTeamChoice" layoutX="69.0" layoutY="93.0" prefWidth="150.0" />
+                  <Text layoutX="111.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Team" />
+                  <Text layoutX="111.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Away Team" />
+                  <Button fx:id="playGame" layoutX="109.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#playGame" text="Play Game!" />
+                  <Text layoutX="20.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Play Music">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <MenuButton fx:id="currentMusicPlaying" alignment="CENTER" layoutX="39.0" layoutY="608.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="218.0" text="Choose Music">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#playLevels" text="Play Levels" />
+                      <MenuItem mnemonicParsing="false" onAction="#playFalls" text="Play Fall " />
+                        <MenuItem mnemonicParsing="false" onAction="#playNightsLikeThis" text="Play Nights like This" />
+                        <MenuItem mnemonicParsing="false" onAction="#playMakeYourMove" text="Play Make your Move" />
+                    </items>
+                  </MenuButton>
+                  <Button layoutX="111.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#stopMusicButton" text="Stop Music" />
+                  <Text layoutX="10.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Player Stats">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <RadioButton fx:id="isPlayer" layoutX="51.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#updateField" selected="true" text="Skater">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="players" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="isGoalie" layoutX="192.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#updateField" text="Goalie" toggleGroup="$players" />
+                  <Button layoutX="116.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#editPlayerStatsButton" text="Edit Stats" />
+                  <Text layoutX="75.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jersey Number" />
+                  <TextField fx:id="editPlayerJerseyNumber" layoutX="159.0" layoutY="340.0" prefHeight="25.0" prefWidth="47.0" />
+                  <Label fx:id="goalsLabel" contentDisplay="RIGHT" layoutX="51.0" layoutY="399.0" text="Goals">
+                     <graphic>
+                        <TextField fx:id="editGoals" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="assistsLabel" layoutX="154.0" layoutY="399.0" text="Assists">
+                     <graphic>
+                        <TextField fx:id="editAssists" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="gamesPlayedLabel" layoutX="118.0" layoutY="437.0" text="Games Played">
+                     <graphic>
+                        <TextField fx:id="editGamesPlayed" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="savesLabel" contentDisplay="RIGHT" layoutX="13.0" layoutY="399.0" text="Saves" visible="false">
+                     <graphic>
+                        <TextField fx:id="editSaves" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="shotsOnGoalLabel" contentDisplay="RIGHT" layoutX="94.0" layoutY="399.0" text="SOG" visible="false">
+                     <graphic>
+                        <TextField fx:id="editSOG" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="shutoutsLabel" contentDisplay="RIGHT" layoutX="162.0" layoutY="399.0" text="Shutouts" visible="false">
+                     <graphic>
+                        <TextField fx:id="editShutouts" prefHeight="25.0" prefWidth="36.0" text="0" />
+                     </graphic>
+                  </Label>
+                  <Text layoutX="10.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Play Game">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

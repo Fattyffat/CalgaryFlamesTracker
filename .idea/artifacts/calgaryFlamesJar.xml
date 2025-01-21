@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="calgaryFlamesJar">
+    <output-path>$PROJECT_DIR$/out/artifacts/calgaryFlamesJar</output-path>
+    <root id="archive" name="calgaryFlamesJar.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="calgaryTrackerDemo3" />
+      <element id="module-source" name="calgaryTrackerDemo3" />
+    </root>
+  </artifact>
+</component>

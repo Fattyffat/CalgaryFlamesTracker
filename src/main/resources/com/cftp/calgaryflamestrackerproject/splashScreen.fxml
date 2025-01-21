@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cftp.calgaryflamestrackerproject.splashScreenController">
+   <children>
+      <ProgressBar fx:id="progressBar" layoutX="-3.0" layoutY="384.0" prefHeight="17.0" prefWidth="606.0" progress="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="385.0" layoutX="-3.0" opacity="0.72" stroke="BLACK" strokeType="INSIDE" width="606.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.8436018957345971" startY="0.4739336492890995">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8899999856948853" green="0.02669999934732914" blue="0.02669999934732914" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8947368264198303" green="0.8350877165794373" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="progressLabel" layoutX="297.0" layoutY="367.0" text="0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blastyLogo.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="465.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blastyLogo.gif" />
+         </image>
+      </ImageView>
+      <Text fill="#fff200" layoutX="150.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calgary Flames Tracker">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

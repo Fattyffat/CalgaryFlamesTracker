@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cftp.calgaryflamestrackerproject.GoalController">
+   <children>
+      <Text layoutX="246.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flames Goal!!!">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Label contentDisplay="RIGHT" layoutX="191.0" layoutY="146.0" text="Scored by #">
+         <graphic>
+            <TextField fx:id="jerseyNumberScored" />
+         </graphic>
+      </Label>
+      <ImageView fitHeight="112.0" fitWidth="200.0" layoutY="-1.0">
+         <image>
+            <Image url="@calgary-cgy.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="112.0" fitWidth="200.0" layoutX="400.0" layoutY="-1.0">
+         <image>
+            <Image url="@calgary-cgy.gif" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="assist1" layoutX="299.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#updateField" text="1">
+         <toggleGroup>
+            <ToggleGroup fx:id="assists" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="assist0" layoutX="217.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#updateField" selected="true" text="0" toggleGroup="$assists" />
+      <RadioButton fx:id="assist2" layoutX="371.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#updateField" text="2" toggleGroup="$assists" />
+      <Text layoutX="181.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assisted by #" />
+      <TextField fx:id="assistBy1" disable="true" layoutX="257.0" layoutY="255.0" />
+      <TextField fx:id="assistBy2" disable="true" layoutX="257.0" layoutY="288.0" />
+      <Button fx:id="confirmButton" layoutX="272.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#confirmSelections" text="Confirm" />
+      <Text layoutX="94.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Assists" />
+   </children>
+</AnchorPane>

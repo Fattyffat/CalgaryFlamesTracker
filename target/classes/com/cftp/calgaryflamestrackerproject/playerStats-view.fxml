@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cftp.calgaryflamestrackerproject.ViewStatsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="401.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="0.933649289099526" endY="1.0" startX="0.6635071090047393" startY="0.24644549763033174">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.800000011920929" green="0.03999999910593033" blue="0.03999999910593033" opacity="0.8582251071929932" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6254295532646048">
+                     <color>
+                        <Color red="0.8899999856948853" green="0.6554625630378723" blue="0.008899999782443047" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fx:id="goalsText" layoutX="425.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goals">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <Text fx:id="assistsText" layoutX="420.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assists">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="394.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <Button fx:id="closeButton" layoutX="419.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#returnView" text="Return" />
+      <ImageView fx:id="playerPicture" fitHeight="266.0" fitWidth="233.0" layoutX="67.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="showGoals" layoutX="420.0" layoutY="129.0" prefHeight="31.0" prefWidth="50.0" />
+      <Label fx:id="showAssists" layoutX="420.0" layoutY="214.0" prefHeight="31.0" prefWidth="50.0" />
+      <Label fx:id="showGamesPlayed" layoutX="420.0" layoutY="292.0" prefHeight="31.0" prefWidth="50.0" />
+      <Label fx:id="showPlayerName" layoutX="316.0" layoutY="38.0" prefHeight="50.0" prefWidth="260.0" />
+      <Text fx:id="savesText" layoutX="366.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saves">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="shotsFacedText" layoutX="481.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shots Faced">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Label fx:id="showSaves" layoutX="362.0" layoutY="129.0" prefHeight="31.0" prefWidth="50.0" />
+      <Label fx:id="showShotsFaced" layoutX="497.0" layoutY="129.0" prefHeight="31.0" prefWidth="50.0" />
+      <Text fx:id="savePercentText" layoutX="360.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save %">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="shutoutsText" layoutX="492.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shutouts">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Label fx:id="showSavePercent" layoutX="362.0" layoutY="214.0" prefHeight="31.0" prefWidth="50.0" />
+      <Label fx:id="showShutouts" layoutX="501.0" layoutY="214.0" prefHeight="31.0" prefWidth="50.0" />
+   </children>
+</AnchorPane>

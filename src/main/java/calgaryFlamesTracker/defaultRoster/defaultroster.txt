@@ -1,0 +1,29 @@
+0
+0
+0
+0
+0
+0
+4,Rasmus Andersson,0,0,0
+8,Chris Tanev,0,0,0
+73,Tyler Toffoli,0,0,0
+11,Mikael Backlund,0,0,0
+44,Eric Gudbranson,0,0,0
+13,Johnny Gaudreau,0,0,0
+15,Brad Richerdson,0,0,0
+16,Nikita Zadorov,0,0,0
+80,Dan Vladar,0,0,0,0
+17,Milan Lucic,0,0,0
+19,Matthew Tkachuk,0,0,0
+20,Blake Coleman,0,0,0
+22,Trevor Lewis,0,0,0
+23,Sean Monahan,0,0,0
+55,Noah Hanifin,0,0,0
+88,Andrew Mangiapane,0,0,0
+25,Jacob Markstrom,0,0,0,0
+26,Mark Stone,0,0,0
+58,Oliver Kylington,0,0,0
+91,Calle Jankrok,0,0,0
+28,Elias Lindholm,0,0,0
+29,Dillon Dube,0,0,0
+63,Adam Ruzicka,0,0,0
